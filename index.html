@@ -779,7 +779,7 @@ async function handleSubmit(e) {
   btn.disabled = true;
   btn.textContent = '등록 중...';
 
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKK26eaKCRVEK3Q5BbxcTc5QZKymmnytAwSu2JfX8WYCz074g7irYY7Bj2HAqeNxeqvQ/exec';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOVcF8iePTQbnzXh6PeB1VBz-TnFd1DTH8bc9LsYq5YOdpZ2_xjTUGY80zilAwBDkERQ/exec';
 
   const payload = {
     name,
@@ -792,8 +792,7 @@ async function handleSubmit(e) {
   try {
     await fetch(APPS_SCRIPT_URL, {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(payload)
     });
   } catch (err) {
@@ -858,7 +857,7 @@ async function handleLookup() {
   btn.disabled = true;
   btn.textContent = '조회 중...';
 
-  const LOOKUP_URL = 'https://script.google.com/macros/s/AKfycbyKK26eaKCRVEK3Q5BbxcTc5QZKymmnytAwSu2JfX8WYCz074g7irYY7Bj2HAqeNxeqvQ/exec';
+  const LOOKUP_URL = 'https://script.google.com/macros/s/AKfycbxOVcF8iePTQbnzXh6PeB1VBz-TnFd1DTH8bc9LsYq5YOdpZ2_xjTUGY80zilAwBDkERQ/exec';
 
   try {
     const res = await fetch(`${LOOKUP_URL}?code=${encodeURIComponent(code)}&phone=${encodeURIComponent(phone)}`);
